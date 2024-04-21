@@ -352,3 +352,4 @@ terraform.rc
 
 # Exclude binary files
 server/bin/
+.vercel
