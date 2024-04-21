@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Form</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+
+</head>
+<body>
+  <div class="container">
+  <h1>Create a Task</h1>
+
+  <form action="/createtask" method="POST">
+    <label for="task">Task:</label>
+    <input type="text" id="task" name="task" value="<%= taskData.task %>" required /><br /><br />
+
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" value="<%= taskData.type %>" required /><br /><br />
+
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty" name="difficulty">
+      <option value="easy" <%= taskData.difficulty === 'easy' ? 'selected' : '' %>>Easy</option>
+      <option value="medium" <%= taskData.difficulty === 'medium' ? 'selected' : '' %>>Medium</option>
+      <option value="hard" <%= taskData.difficulty === 'hard' ? 'selected' : '' %>>Hard</option>
+    </select><br /><br />
+
+    <label for="participants">Participants:</label>
+    <select id="participants" name="participants" required>
+      <option value="<%= taskData.participants %>"><%= taskData.participants %></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select><br /><br />
+
+    <label for="cost">Cost:</label>
+    <input type="text" id="cost" name="cost" value="<%= taskData.cost %>" required /><br /><br />
+
+    <label for="accessibility">Accessibility:</label>
+    <input type="text" id="accessibility" name="accessibility" value="<%= taskData.accessibility %>" required /><br /><br />
+
+    <label for="timeRequired">Time Required:</label>
+    <input type="text" id="timeRequired" name="timeRequired" value="<%= taskData.timeRequired %>" required /><br /><br />
+
+    <label for="familyFriendly">Family Friendly:</label>
+    <select id="familyFriendly" name="familyFriendly">
+      <option value="<%= taskData.familyFriendly %>"><%= taskData.familyFriendly ? 'Yes' : 'No' %></option>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select><br /><br />
+
+    <label for="link">Link:</label>
+    <input type="url" id="link" name="link" value="<%= taskData.link %>" /><br /><br />
+
+    <input type="submit" value="Submit" />
+  </form>
+  </div>
+</body>
+</html>
